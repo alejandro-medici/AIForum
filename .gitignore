@@ -1,0 +1,8 @@
+.DS_Store
+.vscode/settings.json
+*.pem
+*.pub
+*_ssh_key
+*-artifact-*.json
+*.log
+*output/

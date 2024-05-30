@@ -1,0 +1,6 @@
+ansible
+ansible-lint
+ansible-creator
+ansible-navigator
+ansible-content-parser
+pygit2
