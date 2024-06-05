@@ -6,6 +6,9 @@ Compilation of Ansible Lightspeed demo content and examples.
 
 Please follow the instructions provided by the resources available in the [getting started guide](./GETTING_STARTED.md).
 
-## ❗️Test before doing a demo if you're using this content locally
 
-The IBM Watson Code Assistant model continues to improve and evolve with each release. This can result in generated suggestions that differ from the examples provided.
+## Getting started: Red Hat Ansible Lightspeed with IBM watsonx Code Assistant
+
+<a href="https://youtu.be/Ty2d-nlnZPQ?si=VXPubaHy6dsu-TBZ">
+<img src="./docs/image.png"> 
+</a>
