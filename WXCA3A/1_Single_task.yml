@@ -1,0 +1,31 @@
+---
+- name: Install and configure Cockpit
+  hosts: rhel
+  become: true
+
+# module_defaults:
+#   ansible.builtin.service:
+#     enabled: true
+#     state: started
+
+  tasks:
+        # TASK 1
+        # # Nota: la sugerencia incluíra las mejores prácticas de Ansible mediante el uso de un nombre de colección completamente calificado.
+    # - name: Install cockpit package
+
+        # TASK 2
+        # # Nota: Ansible Lightspeed utilizara el módulo "ansible.builtin.template" basado en la extensión de archivo ".j2".
+        # # Nota: La sugerencia establece los permisos de archivo ("0644"), el propietario y el grupo según las mejores prácticas de Ansible.
+    # - name: Copy cockpit.conf.j2 to /etc/cockpit
+
+        # TASK 3
+        # # Nota: Ansible Lightspeed utilizara el mensaje genérico "Start and enable service"
+        # # y el contexto completo del Playbook para inferir que la recomendación debe iniciar el servicio "cockpit".
+        # # Nota: El contexto cambia si se habilita la sección "module_defaults" en la parte superior del Playbook.
+        # # Nota: Ansible Lightspeed utilizó el contexto completo del Playbook y evaluó "module_defaults"
+        # # al generar una sugerencia.
+        # # La sugerencia actualizada ya no incluye los argumentos "enabled:" y "state:".
+    # - name: Start and enable service
+
+        # TASK 4
+    # - name: Wait 15 seconds port 9090

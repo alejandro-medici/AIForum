@@ -1,0 +1,24 @@
+---
+- name: EC2 Cloud Operations using variables
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  module_defaults:
+    group/aws:
+      region: us-east-1
+
+  vars:
+    ec2_master_instance:
+      name: lightspeed-instance-01
+      key_name: lightspeed-keypair
+
+    ec2_slave_instance:
+      name: slave-lightspeed-instance-10
+      key_name: slave-lightspeed-keypair
+
+  tasks:
+
+    # - name: Provision an instance using ec2_master_instance var
+
+    # - name: Provision an instance using ec2_slave_instance var

@@ -1,0 +1,40 @@
+---
+- name: EC2 Cloud Operations
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  module_defaults:
+    group/aws:
+      region: us-east-1
+
+  # vars:
+  #   ec2_instance:
+  #     name: lightspeed-instance-01
+  #     key_name: lightspeed-keypair
+  #     image_id: ami-016eb5d644c333ccb # RHEL 9 us-east-1
+  #     tags:
+  #       function: lightspeed-demo
+  #     security_group: secgroup-lightspeed
+
+  tasks:
+        # TASK 1
+        # # Nota: Prácticas recomendadas: la sugerencia utilizó el nombre de colección completa.
+        # # Nota: contexto: Ansible Lightspeed utilizó el nombre de Playbook "EC2 Cloud Operations" con el módulo "amazon.aws.ec2_vpc_subnet_info" correcto.
+
+    # - name: Gather subnet info tag:Name subnet-lightspeed
+
+        # TASK 2
+        # # Nota: Contexto: La sugerencia incluía la variable registrada de la tarea anterior.
+        # # Nota: Precisión: La sugerencia proporciona el valor clave correcto de la variable registrada de la tarea anterior.
+
+    # - name: Create vpc_subnet_id var
+
+        # TASK 3
+        # # Nota – Eficiencia: La sugerencia proporciona ejemplos prácticos de variables para mejorar la eficiencia.
+
+    # - name: Provision t3.micro instance
+
+        # # Nota - Contexto: La sugerencia actualizada incluye los "campos de la variable ec2_instance en la sugerencia"
+
+    # - name: Provision t3.micro instance using ec2_instance var

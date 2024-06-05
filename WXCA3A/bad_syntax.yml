@@ -1,0 +1,6 @@
+---
+- name: Bad YAML syntax
+  hosts: all
+
+  tasks:
+# This prompt ins't indented correctly
