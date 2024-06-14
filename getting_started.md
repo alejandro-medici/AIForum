@@ -7,7 +7,7 @@ Doing it in this way, you can run and work with your code independently your loc
 
 Here is the arquitecture
 
-<img src="./docs/img/architecture-containers.png">
+<img src="./docs/architecture-containers.png">
 
 Use The <b>Visual Studio Code Remote - Containers extension</b>. You can download from <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers" >Here</a>
 
@@ -15,7 +15,7 @@ The extension starts (or attaches to) a development container running a well def
 
 You then work with VS Code as if everything were running locally on your machine, except now they are separated inside a container.
 
-<img src="./docs/img/remote-containers-readme.gif">
+<img src="./docs/remote-containers-readme.gif">
 
 ## Configuring and activating Ansible Lightspeed
 
