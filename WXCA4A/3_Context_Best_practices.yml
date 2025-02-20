@@ -8,14 +8,14 @@
     group/aws:
       region: us-east-1
 
-  # vars:
-  #   ec2_instance:
-  #     name: lightspeed-instance-01
-  #     key_name: lightspeed-keypair
-  #     image_id: ami-016eb5d644c333ccb # RHEL 9 us-east-1
-  #     tags:
-  #       function: lightspeed-demo
-  #     security_group: secgroup-lightspeed
+    vars:
+     ec2_instance:
+       name: lightspeed-instance-01
+       key_name: lightspeed-keypair
+       image_id: ami-016eb5d644c333ccb # RHEL 9 us-east-1
+       tags:
+         function: lightspeed-demo
+       security_group: secgroup-lightspeed
 
   tasks:
         # TASK 1
@@ -23,18 +23,46 @@
         # # Nota: contexto: Ansible Lightspeed utilizó el nombre de Playbook "EC2 Cloud Operations" con el módulo "amazon.aws.ec2_vpc_subnet_info" correcto.
 
     # - name: Gather subnet info tag:Name subnet-lightspeed
+    - name: Gather subnet info tag:name subnet-lightspeed
+      amazon.aws.ec2_vpc_subnet_info:
+        filters:
+          tag:Name: lightspeed-subnet
+      register: subnet_info
+
 
         # TASK 2
         # # Nota: Contexto: La sugerencia incluía la variable registrada de la tarea anterior.
         # # Nota: Precisión: La sugerencia proporciona el valor clave correcto de la variable registrada de la tarea anterior.
 
     # - name: Create vpc_subnet_id var
+    - name: Create vpc_subnet_id var
+      ansible.builtin.set_fact:
+        vpc_subnet_id: "{{ subnet_info.subnets[0].id }}"
+
 
         # TASK 3
         # # Nota – Eficiencia: La sugerencia proporciona ejemplos prácticos de variables para mejorar la eficiencia.
 
     # - name: Provision t3.micro instance
+    - name: Provision t3.micro instance
+      amazon.aws.ec2:
+        key_name: "{{ _key_name_ }}"
+        instance_type: t3.micro
+        image_id: ami-016eb5d644c333ccb
+        vpc_subnet_id: "{{ vpc_subnet_id }}"
+        wait: true
+        group: secgroup-lightspeed
+        instance_tags:
+          Name: lightspeed-instance-01
+          function: lightspeed-demo
+        assign_public_ip: true
+      register: ec2_instance
+
 
         # # Nota - Contexto: La sugerencia actualizada incluye los "campos de la variable ec2_instance en la sugerencia"
 
     # - name: Provision t3.micro instance using ec2_instance var
+    - name: Provision t3.micro instance using ec2_instance var
+      ansible.builtin.set_fact:
+        ec2_instance_id: "{{ ec2_instance.tagged_instances[0].id }}"
+

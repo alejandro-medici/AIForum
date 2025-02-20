@@ -1,0 +1,32 @@
+---
+- name: Infra Opss
+  hosts: localhost
+  gather_facts: false
+
+
+  tasks:
+        # # Nota: Uso de lenguaje natural utilizando roles y collections en los prompts
+
+    # - name: Install cockpit using redhat.rhel_system_roles collection
+    - name: Install cockpit using redhat.rhel_system_roles collection
+      ansible.builtin.include_role:
+        name: redhat.rhel_system_roles.cockpit
+
+
+    # - name: Instalar cockpit usando redhat.rhel_system_roles collection
+    - name: Instalar cockpit usando redhat.rhel_system_roles collection
+      ansible.builtin.include_role:
+        name: redhat.rhel_system_roles.cockpit
+
+
+    # - name: Installer le cockpit à l'aide de la collection redhat.rhel_system_roles
+    - name: Installer le cockpit à l'aide de la collection redhat.rhel_system_roles
+      ansible.builtin.include_role:
+        name: redhat.rhel_system_roles.cockpit
+
+
+    # - name: Installa il Cockpit utilizzando la raccolta redhat.rhel_system_roles
+    - name: Installa il cockpit utilizzando la raccolta redhat.rhel_system_roles
+      ansible.builtin.include_role:
+        name: redhat.rhel_system_roles.cockpit
+
